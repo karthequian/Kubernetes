@@ -1,0 +1,316 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: homepage-dev
+  labels:
+    env: development
+    dev-lead: karthik
+    team: web
+    application_type: ui
+    release-version: "12.0"
+spec:
+  containers:
+  - name: helloworld
+    image: karthequian/helloworld:latest
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: homepage-staging
+  labels:
+    env: staging
+    team: web
+    dev-lead: karthik
+    application_type: ui
+    release-version: "12.0"
+spec:
+  containers:
+  - name: helloworld
+    image: karthequian/helloworld:latest
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: homepage-prod
+  labels:
+    env: production
+    team: web
+    dev-lead: karthik
+    application_type: ui
+    release-version: "12.0"
+spec:
+  containers:
+  - name: helloworld
+    image: karthequian/helloworld:latest
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: login-dev
+  labels:
+    env: development
+    team: auth
+    dev-lead: jim
+    application_type: api
+    release-version: "1.0"
+spec:
+  containers:
+  - name: login
+    image: karthequian/ruby:latest
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: login-staging
+  labels:
+    env: staging
+    team: auth
+    dev-lead: jim
+    application_type: api
+    release-version: "1.0"
+spec:
+  containers:
+  - name: login
+    image: karthequian/ruby:latest
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: login-prod
+  labels:
+    env: production
+    team: auth
+    dev-lead: jim
+    application_type: api
+    release-version: "1.0"
+spec:
+  containers:
+  - name: login
+    image: karthequian/ruby:latest
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: cart-dev
+  labels:
+    env: development
+    team: ecommerce
+    dev-lead: carisa
+    application_type: api
+    release-version: "1.0"
+spec:
+  containers:
+  - name: cart
+    image: karthequian/ruby:latest
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: cart-staging
+  labels:
+    env: staging
+    team: ecommerce
+    dev-lead: carisa
+    application_type: api
+    release-version: "1.0"
+spec:
+  containers:
+  - name: cart
+    image: karthequian/ruby:latest
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: cart-prod
+  labels:
+    env: production
+    team: ecommerce
+    dev-lead: carisa
+    application_type: api
+    release-version: "1.0"
+spec:
+  containers:
+  - name: cart
+    image: karthequian/ruby:latest
+---
+
+apiVersion: v1
+kind: Pod
+metadata:
+  name: social-dev
+  labels:
+    env: development
+    team: marketing
+    dev-lead: carisa
+    application_type: api
+    release-version: "2.0"
+spec:
+  containers:
+  - name: social
+    image: karthequian/ruby:latest
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: social-staging
+  labels:
+    env: staging
+    team: marketing
+    dev-lead: marketing
+    application_type: api
+    release-version: "1.0"
+spec:
+  containers:
+  - name: social
+    image: karthequian/ruby:latest
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: social-prod
+  labels:
+    env: production
+    team: marketing
+    dev-lead: marketing
+    application_type: api
+    release-version: "1.0"
+spec:
+  containers:
+  - name: social
+    image: karthequian/ruby:latest
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: catalog-dev
+  labels:
+    env: development
+    team: ecommerce
+    dev-lead: daniel
+    application_type: api
+    release-version: "4.0"
+spec:
+  containers:
+  - name: catalog
+    image: karthequian/ruby:latest
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: catalog-staging
+  labels:
+    env: staging
+    team: ecommerce
+    dev-lead: daniel
+    application_type: api
+    release-version: "4.0"
+spec:
+  containers:
+  - name: catalog
+    image: karthequian/ruby:latest
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: catalog-prod
+  labels:
+    env: production
+    team: ecommerce
+    dev-lead: daniel
+    application_type: api
+    release-version: "4.0"
+spec:
+  containers:
+  - name: catalog
+    image: karthequian/ruby:latest
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: quote-dev
+  labels:
+    env: development
+    team: ecommerce
+    dev-lead: amy
+    application_type: api
+    release-version: "2.0"
+spec:
+  containers:
+  - name: quote
+    image: karthequian/ruby:latest
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: quote-staging
+  labels:
+    env: staging
+    team: ecommerce
+    dev-lead: amy
+    application_type: api
+    release-version: "2.0"
+spec:
+  containers:
+  - name: quote
+    image: karthequian/ruby:latest
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: quote-prod
+  labels:
+    env: production
+    team: ecommerce
+    dev-lead: amy
+    application_type: api
+    release-version: "1.0"
+spec:
+  containers:
+  - name: quote
+    image: karthequian/ruby:latest
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: ordering-dev
+  labels:
+    env: development
+    team: purchasing
+    dev-lead: chen
+    application_type: backend
+    release-version: "2.0"
+spec:
+  containers:
+  - name: ordering
+    image: karthequian/ruby:latest
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: ordering-staging
+  labels:
+    env: staging
+    team: purchasing
+    dev-lead: chen
+    application_type: backend
+    release-version: "2.0"
+spec:
+  containers:
+  - name: ordering
+    image: karthequian/ruby:latest
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: ordering-prod
+  labels:
+    env: production
+    team: purchasing
+    dev-lead: chen
+    application_type: backend
+    release-version: "2.0"
+spec:
+  containers:
+  - name: ordering
+    image: karthequian/ruby:latest
+---
