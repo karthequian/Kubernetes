@@ -3,13 +3,13 @@
 ## Chapter Goals
 
 1. Starting up minikube
-2. Setup your first kubernetes helloworld application
+2. Set up your first Kubernetes helloworld application
 3. Run your application in a minikube environment
-4. Expose application via a loadbalancer and see it running
+4. Expose application via a load balancer and see it running
 
 ### Starting up minikube
 
-First, get minikube up and running with the command `minikube start`. This command sets up a kubernetes dev environment for you via virtualbox.
+First, get minikube up and running with the command `minikube start`. This command sets up a Kubernetes dev environment for you via VirtualBox.
 
 Command output:
 ```
@@ -35,11 +35,11 @@ minikube   Ready     7d        v1.7.5
 
 This will show you that minikube is ready to use.
 
-### Setup your helloworld
+### Set up your helloworld
 
-We will run one of the most Docker helloworld applications out there- 
+We will run one of the most common Docker helloworld applications out there. 
 
-To run this type:
+To run this, type:
 
 ```
 kubectl run hw --image=karthequian/helloworld --port=80
@@ -47,14 +47,14 @@ kubectl run hw --image=karthequian/helloworld --port=80
 
 This command runs a deployment called "hw", pulling from the image karthequian/helloworld, and exposes port 80 of the container to the pod.
 
-Running this command will give you this output, stating that the deployment "hw" was created
+Running this command will give you this output, stating that the deployment "hw" was created.
 
 ```
 MacbookHome:~ karthik$ kubectl run hw --image=karthequian/helloworld --port=80
 deployment "hw" created
 ```
 
-We can run the command `kubectl get all` to see all our resources running as shown in the output below.
+We can run the command `kubectl get all` to see all our resources running, as shown in the output below.
 
 ```
 MacbookHome:~ karthik$ kubectl get all
@@ -73,16 +73,16 @@ rs/hw-4212494168   1         1         1         24m
 MacbookHome:~ karthik$
 ```
 
-### Setting up a loadbalancer
-You'll notice that in the `kubectl get all` command, the service has a port mapping defined, however, when you try to hit that port via your web browser, you won't be able to reach the service.
+### Setting up a load balancer
+You'll notice that in the `kubectl get all` command, the service has a port mapping defined; however, when you try to hit that port via your web browser, you won't be able to reach the service.
 
-This is because by default, the Pod is only accessible by its internal IP address within the cluster. To make the helloworld container accessible from outside the Kubernetes virtual network, you have to expose the Pod as a Kubernetes Service.
+This is because by default, the pod is only accessible by its internal IP address within the cluster. To make the helloworld container accessible from outside the Kubernetes virtual network, you have to expose the pod as a Kubernetes service.
 
-To do this, we can expose the Pod to the public internet using the kubectl expose command `kubectl expose deployment helloworld --type=LoadBalancer`
+To do this, we can expose the pod to the public internet using the kubectl expose command `kubectl expose deployment helloworld --type=LoadBalancer`
 
-The --type=LoadBalancer flag exposes the Deployment outside of the cluster. On cloud providers that support load balancers, an external IP address would be provisioned to access the Service.
+The --type=LoadBalancer flag exposes the deployment outside of the cluster. On cloud providers that support load balancers, an external IP address would be provisioned to access the service.
 
-To do this in the Minikube environment, the LoadBalancer type makes the Service accessible through the minikube service command.
+To do this in the minikube environment, the LoadBalancer type makes the service accessible through the minikube service command.
 
 `minikube service helloworld`
 
