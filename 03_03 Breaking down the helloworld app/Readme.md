@@ -2,15 +2,15 @@
 
 ## Chapter Goals
 1. Understand the basics of the deployment and service
-2. Create our deployment using yaml
-3. Execute our deployment using yaml
-3. Verify that it is working as expected
+2. Create our deployment using YAML
+3. Execute our deployment using YAML
+3. Verify that the application is working as expected
 
 ### Understand the basics of the deployment and service
 
 Running `kubectl get all` shows us pods, services and deployments that are running that build the helloworld application. Let's peel this onion and figure out what's going on.
 
-To take a look at the deployment yaml that runs the application, run `kubectl get deploy/hw -o yaml`. This will return the yaml that composes the helloworld service:
+To take a look at the deployment YAML that runs the application, run `kubectl get deploy/hw -o yaml`. This will return the YAML that composes the helloworld service:
 
 ```
 MacbookHome:03_03 Breaking down the helloworld app karthik$ kubectl get deploy/hw -o yaml
@@ -74,9 +74,9 @@ status:
   updatedReplicas: 1
 ```
 
-When working with kubernetes, you should get familiar with these yaml files.
+When working with Kubernetes, you should get familiar with these YAML files.
 
-The kubernetes service is also comprised of yaml's. Let's take a look at that by running `kubectl get service helloworld-service -o yaml`
+The Kubernetes service also comprises YAMLs. Let's take a look at that by running `kubectl get service helloworld-service -o yaml`
 
 ```
 apiVersion: v1
@@ -105,9 +105,9 @@ status:
 ```
 
 
-### Create our deployment using yaml
+### Create our deployment using YAML
 
-If we were going to recreate our deployment and service as yaml's, they would look like the following:
+If we were going to recreate our deployment and service as YAMLs, they would look like the following:
 
 Deployment:
 ```
@@ -151,9 +151,9 @@ spec:
 ```
 
 
-### Execute our deployment using yaml
+### Execute our deployment using YAML
 
-To create these, we can run the command `kubectl create -f helloworld-deployment.yml` to create our deployment and `kubectl create -f helloworld-service.yml` to create the service. This will take the contents of the yaml file and create the necessary components in the file.
+To create these, we can run the command `kubectl create -f helloworld-deployment.yml` to create our deployment and `kubectl create -f helloworld-service.yml` to create the service. This will take the contents of the YAML file and create the necessary components in the file.
 
 ```
 karthik$ kubectl create -f helloworld-deployment.yml
@@ -164,7 +164,7 @@ karthik$
 
 ```
 
-Typically, in the real world, you would mostly not use seperate files to break up your application, and would have it in a single file that encompasses the entire application with both the deployment and the service component. An example of this yaml file is shown here:
+Typically, in the real world, you would mostly not use seperate files to break up your application and would have it in a single file that encompasses the entire application with both the deployment and the service component. An example of this YAML file is shown here:
 
 ```
 apiVersion: apps/v1beta1
@@ -203,9 +203,9 @@ spec:
     app: helloworld
 ```
 
-Notice the `---` that marks the end of 1 section and starts another.
+Notice the `---` that marks the end of one section and starts another.
 
-### Verify that it is working as expected
+### Verify that the application is working as expected
 Finally, to see this new helloworld working as expected, we will run the minikube command to expose the service in the browser with the following command:
 
 ```
