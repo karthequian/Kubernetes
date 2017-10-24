@@ -4,13 +4,13 @@
 1. Adding labels during build time
 2. Viewing labels
 2. Adding labels to running pods
-3. Deleting labels
+3. Deleting a label
 4. Searching by labels
 5. Extending this concept to deployments/services
 
 ### Adding labels during build time
 
-Labels can be added to pods, services and deployments either at build time or at run time. If you're adding labels at build time, you can add this to the yaml file and add a label section in the metadata portion of the yaml as shown below:
+You can add labels to pods, services and deployments either at build time or at run time. If you're adding labels at build time, you can add ??DELETE--> this to the YAML file and add <-DELETE?? a label section in the metadata portion of the YAML as shown below:
 
 ```
 apiVersion: v1
@@ -49,7 +49,7 @@ MacbookHome:04_01_Adding_labels_to_the_app karthik$
 ### Adding labels to running pods
 To add labels to a running pod, you can use the `kubectl label` command as follows: `kubectl label po/helloworld app=helloworld`. This adds the label `app` with the value `helloworld` to the pod.
 
-To update a value of a label, use the `--overwrite` flag to the command as follows: `kubectl label po/helloworld app=helloworldd --overwrite`
+To update the value of a label, use the `--overwrite` flag in the command as follows: `kubectl label po/helloworld app=helloworldd --overwrite` ??is the intent to have 'dd' at the end of helloworld and that's the only way you're changing in this overwrite example?  if so, maybe explain the example you're using or make it a slightly different example, because people may miss the 'dd' ??
 
 ### Deleting a label
 To remove an existing label, just add a `-` to the end of the label key as follows: `kubectl label po/helloworld app-`. This will remove the app label from the helloworld pod.
@@ -162,7 +162,7 @@ quote-prod      1/1       Running   0          9m
 social-prod     1/1       Running   0          9m
 ```
 
-Similarly, to get all pods by dev lead karthik, you'd add `dev-lead=karthik` to the selector as shown below.
+Similarly, to get all pods by dev lead Karthik, you'd add `dev-lead=karthik` to the selector as shown below.
 
 ```
 MacbookHome:04_01_Adding_labels_to_the_app karthik$ kubectl get pods --selector dev-lead=karthik
@@ -172,7 +172,7 @@ homepage-prod      1/1       Running   0          12m
 homepage-staging   1/1       Running   0          12m
 ```
 
-You can also do more complicated searches, like finding any pods owned by karthik in the development tier by the following query `dev-lead=karthik,env=staging`,
+You can also do more complicated searches, like finding any pods owned by Karthik in the development tier, by the following query `dev-lead=karthik,env=staging`,
 
 ```
 MacbookHome:04_01_Adding_labels_to_the_app karthik$ kubectl get pods -l dev-lead=karthik,env=staging
@@ -229,7 +229,7 @@ social-prod      1/1       Running   3          37m
 social-staging   1/1       Running   3          37m
 ```
 
-The oppositre of "in" is "notin", surprise, that is supported as well, shown in this example:
+The opposite of "in" is "notin". Surprise. "Notin" is supported as well, as shown in this example:
 
 ```
 MacbookHome:04_01_Adding_labels_to_the_app karthik$ kubectl get pods -l 'release-version notin (1.0,2.0)'
@@ -242,7 +242,7 @@ homepage-prod      1/1       Running   0          44m
 homepage-staging   1/1       Running   0          44m
 ```
 
-Finally, sometimes your label might not have a value assigned to it, but you can still search for this by passing the label name
+Finally, sometimes your label might not have a value assigned to it, but you can still search ??for this?? ??WHAT IS 'THIS' OR CAN 'FOR THIS' JUST BE DELETED?? by passing the label name.  ??This section may be over my head, but is this just getting anything from any release version, since no release version is listed??
 
 ```
 MacbookHome:04_01_Adding_labels_to_the_app karthik$ kubectl get pods -l 'release-version'
@@ -270,9 +270,9 @@ social-prod        1/1       Running   4          46m
 social-staging     1/1       Running   4          46m
 ```
 
-### Extending this concept
+### Extending this concept to deployments/services
 
-As a bonus, this will also work with `kubectl get services/deployments/all --show-labels`, and will return labels for your services, deployments or all objects.
+As a bonus, ??this?? ??WHAT IS 'THIS'?? will also work with `kubectl get services/deployments/all --show-labels` and will return labels for your services, deployments or all objects.
 
 ```
 MacbookHome:04_01_Adding_labels_to_the_app karthik$ kubectl get all --show-labels
@@ -297,7 +297,7 @@ rs/hw-4212494168                      1         1         1         2d        po
 MacbookHome:04_01_Adding_labels_to_the_app karthik$
 ```
 
-And, you can delete pods, services or deployments by label as well! For example ` kubectl delete pods -l dev-lead=karthik` will delete all pods who's dev-lead was Karthik.
+And, you can delete pods, services or deployments by label as well! For example ` kubectl delete pods -l dev-lead=karthik` will delete all pods who's dev-lead was Karthik.  ??HOW IS THIS DIFFERENT THAN YOUR EARLIER EXAMPLE OF DELETING PODS??
 
 ```
 MacbookHome:04_01_Adding_labels_to_the_app karthik$ kubectl delete pods -l dev-lead=karthik
@@ -306,4 +306,4 @@ pod "homepage-prod" deleted
 pod "homepage-staging" deleted
 ```
 
-To summarize, labels in kubernetes is a powerful concept! Use the labeling feature to your advantage to build your infrastructure in an organized fashion.
+To summarize, labels in Kubernetes is a powerful concept! Use the labeling feature to your advantage to build your infrastructure in an organized fashion.
