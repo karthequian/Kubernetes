@@ -5,18 +5,18 @@
 
 ### Learn how to scale the helloworld application
 
-When we run the `kubectl get all` command, we notice that we have a single instance of the helloworld deployment running, as well as a single pod associated with the deployment.
+When we run the `kubectl get all` command, we notice that there's a single instance of the helloworld deployment running, as well as a single pod associated with the deployment.
 
-There are many scenarios where this is undesired. If for some reason the pod crashes, or ends up in a crash loop we will not have any instances of the application running which will cause downtime until the pod can restart successfully.
+There are many scenarios in which this is undesired. If for some reason the pod crashes or ends up in a crash loop, we will not have any instances of the application running, which will cause downtime until the pod can restart successfully.
 
-Fortunately, we can use the inbuilt property of kubernetes called replica sets for deployments to solve this issue. To run a replica set for our helloworld deployment, run the command `kubectl scale --replicas=3 deploy/helloworld-deployment`. This will add 3 replicas for our deployment, which effectively means 3 pods running for a single deployment.
+Fortunately, we can use the inbuilt property of Kubernetes, called replica sets, to solve this issue ??for deployments??. To run a replica set for our helloworld deployment, run the command `kubectl scale --replicas=3 deploy/helloworld-deployment`. This will add three replicas for our deployment, which effectively means three pods running for a single deployment.
 
 ```
 MacbookHome:03_03 Breaking down the helloworld app karthik$ kubectl scale --replicas=3 deploy/helloworld-deployment
 deployment "helloworld-deployment" scaled
 ```
 
-Now, if we run a `kubectl get all`, we'll see 3 pods instead of 1.
+Now, if we run `kubectl get all`, we'll see three pods instead of one.
 
 ```
 MacbookHome:03_03 Breaking down the helloworld app karthik$ kubectl get all
