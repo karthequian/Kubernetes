@@ -9,7 +9,9 @@ When we run the `kubectl get all` command, we notice that there's a single insta
 
 There are many scenarios in which this is undesired. If for some reason the pod crashes or ends up in a crash loop, we will not have any instances of the application running, which will cause downtime until the pod can restart successfully.
 
-Fortunately, we can use the inbuilt property of Kubernetes, called replica sets, to solve this issue ??for deployments??. To run a replica set for our helloworld deployment, run the command `kubectl scale --replicas=3 deploy/helloworld-deployment`. This will add three replicas for our deployment, which effectively means three pods running for a single deployment.
+Fortunately, we can use the inbuilt property of Kubernetes, called replica sets, to solve this issue for deployments. 
+
+To run a replica set for our helloworld deployment, run the command `kubectl scale --replicas=3 deploy/helloworld-deployment`. This will add three replicas for our deployment, which effectively means three pods running for a single deployment.
 
 ```
 MacbookHome:03_03 Breaking down the helloworld app karthik$ kubectl scale --replicas=3 deploy/helloworld-deployment
