@@ -6,11 +6,11 @@
 2. Adding labels to running pods
 3. Deleting a label
 4. Searching by labels
-5. Extending this concept to deployments/services
+5. Extending the label concept to deployments/services
 
 ### Adding labels during build time
 
-You can add labels to pods, services and deployments either at build time or at run time. If you're adding labels at build time, you can add ??DELETE--> this to the YAML file and add <-DELETE?? a label section in the metadata portion of the YAML as shown below:
+You can add labels to pods, services and deployments either at build time or at run time. If you're adding labels at build time, you can add a label section in the metadata portion of the YAML as shown below:
 
 ```
 apiVersion: v1
@@ -49,7 +49,7 @@ MacbookHome:04_01_Adding_labels_to_the_app karthik$
 ### Adding labels to running pods
 To add labels to a running pod, you can use the `kubectl label` command as follows: `kubectl label po/helloworld app=helloworld`. This adds the label `app` with the value `helloworld` to the pod.
 
-To update the value of a label, use the `--overwrite` flag in the command as follows: `kubectl label po/helloworld app=helloworldd --overwrite` ??is the intent to have 'dd' at the end of helloworld and that's the only way you're changing in this overwrite example?  if so, maybe explain the example you're using or make it a slightly different example, because people may miss the 'dd' ??
+To update the value of a label, use the `--overwrite` flag in the command as follows: `kubectl label po/helloworld app=helloworldapp --overwrite` 
 
 ### Deleting a label
 To remove an existing label, just add a `-` to the end of the label key as follows: `kubectl label po/helloworld app-`. This will remove the app label from the helloworld pod.
@@ -242,7 +242,7 @@ homepage-prod      1/1       Running   0          44m
 homepage-staging   1/1       Running   0          44m
 ```
 
-Finally, sometimes your label might not have a value assigned to it, but you can still search ??for this?? ??WHAT IS 'THIS' OR CAN 'FOR THIS' JUST BE DELETED?? by passing the label name.  ??This section may be over my head, but is this just getting anything from any release version, since no release version is listed??
+Finally, sometimes your label might not have a value assigned to it, but you can still search by label name.  
 
 ```
 MacbookHome:04_01_Adding_labels_to_the_app karthik$ kubectl get pods -l 'release-version'
@@ -270,9 +270,9 @@ social-prod        1/1       Running   4          46m
 social-staging     1/1       Running   4          46m
 ```
 
-### Extending this concept to deployments/services
+### Extending the label concept to deployments/services
 
-As a bonus, ??this?? ??WHAT IS 'THIS'?? will also work with `kubectl get services/deployments/all --show-labels` and will return labels for your services, deployments or all objects.
+As a bonus, labels will also work with `kubectl get services/deployments/all --show-labels` and will return labels for your services, deployments or all objects.
 
 ```
 MacbookHome:04_01_Adding_labels_to_the_app karthik$ kubectl get all --show-labels
@@ -297,8 +297,7 @@ rs/hw-4212494168                      1         1         1         2d        po
 MacbookHome:04_01_Adding_labels_to_the_app karthik$
 ```
 
-And, you can delete pods, services or deployments by label as well! For example ` kubectl delete pods -l dev-lead=karthik` will delete all pods who's dev-lead was Karthik.  ??HOW IS THIS DIFFERENT THAN YOUR EARLIER EXAMPLE OF DELETING PODS??
-
+And, you can delete pods, services or deployments by label as well! For example ` kubectl delete pods -l dev-lead=karthik` will delete all pods who's dev-lead was Karthik. 
 ```
 MacbookHome:04_01_Adding_labels_to_the_app karthik$ kubectl delete pods -l dev-lead=karthik
 pod "homepage-dev" deleted
