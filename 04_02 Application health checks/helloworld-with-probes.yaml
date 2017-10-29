@@ -1,0 +1,43 @@
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+  name: helloworld-deployment-with-probe
+spec:
+  selector:
+    matchLabels:
+      app: helloworld
+  replicas: 1 # tells deployment to run 1 pods matching the template
+  template: # create pods using pod definition in this template
+    metadata:
+      labels:
+        app: helloworld
+    spec:
+      containers:
+      - name: helloworld
+        image: karthequian/helloworld:latest
+        ports:
+        - containerPort: 80
+        readinessProbe:
+          # length of time to wait for a pod to initialize
+          # after pod startup, before applying health checking
+          initialDelaySeconds: 10
+          # Amount of time to wait before timing out
+          initialDelaySeconds: 1
+          # Probe for http
+          httpGet:
+            # Path to probe
+            path: /
+            # Port to probe
+            port: 80
+        livenessProbe:
+          # length of time to wait for a pod to initialize
+          # after pod startup, before applying health checking
+          initialDelaySeconds: 10
+          # Amount of time to wait before timing out
+          timeoutSeconds: 1
+          # Probe for http
+          httpGet:
+            # Path to probe
+            path: /
+            # Port to probe
+            port: 80

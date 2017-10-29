@@ -37,7 +37,7 @@ This will show you that minikube is ready to use.
 
 ### Set up your helloworld
 
-We will run one of the most common Docker helloworld applications out there. 
+We will run one of the most common Docker helloworld applications out there- [https://hub.docker.com/r/karthequian/helloworld/]
 
 To run this, type:
 
