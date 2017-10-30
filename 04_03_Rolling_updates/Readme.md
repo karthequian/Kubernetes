@@ -6,7 +6,7 @@
 
 ### Upgrade a deployment from 1 version to another
 
-Let's deploy our initial version of our application `kubectl create -f helloworld-lionel.yaml`. After the deployment and service has completed, let's expose this via a nodeport by `minikube service helloworld-lionel-service`. This will bring up the helloworld UI that we have seen before.
+Let's deploy our initial version of our application `kubectl create -f helloworld-lionel.yaml --record`. After the deployment and service has completed, let's expose this via a nodeport by `minikube service helloworld-lionel-service`. This will bring up the helloworld UI that we have seen before. We added the `--record` to this because we want to record our rollout history that I'll talk about later on.
 
 Looking at the deployment, we see that there are 3 desired, current and ready replicas.
 
