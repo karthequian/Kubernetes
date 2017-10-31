@@ -34,7 +34,6 @@ Command to test: `kubectl version`
 
 Command to test: `minikube version`
 
-=======
 # Setup Instructions:
 
 ## Docker:
