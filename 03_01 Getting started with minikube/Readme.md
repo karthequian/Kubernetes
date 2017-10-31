@@ -33,6 +33,7 @@ Command to test: `kubectl version`
 * Download link: https://github.com/kubernetes/minikube/releases
 
 Command to test: `minikube version`
+
 =======
 # Setup Instructions:
 
