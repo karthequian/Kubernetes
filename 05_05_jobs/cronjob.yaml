@@ -1,0 +1,19 @@
+apiVersion: batch/v1beta1
+kind: CronJob
+metadata:
+  name: hellocron
+spec:
+  schedule: "*/1 * * * *" #Runs every minute (cron syntax) or @hourly.
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+          - name: hellocron
+            image: busybox
+            args:
+            - /bin/sh
+            - -c
+            - date; echo Hello from your Kubernetes cluster
+          restartPolicy: OnFailure #could also be Always or Never
+  suspend: false #Set to true if you want to suspend in the future
