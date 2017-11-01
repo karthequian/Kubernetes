@@ -1,0 +1,17 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: logreader
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        name: logreader
+    spec:
+      containers:
+      - name: logreader
+        image: karthequian/reader:latest
+        env:
+        - name: log_level
+          value: "error"

@@ -6,22 +6,22 @@
 
 ### Upgrade a deployment from 1 version to another
 
-Let's deploy our initial version of our application `kubectl create -f helloworld-lionel.yaml --record`. After the deployment and service has completed, let's expose this via a nodeport by `minikube service helloworld-lionel-service`. This will bring up the helloworld UI that we have seen before. We added the `--record` to this because we want to record our rollout history that I'll talk about later on.
+Let's deploy our initial version of our application `kubectl create -f helloworld-black.yaml --record`. After the deployment and service has completed, let's expose this via a nodeport by `minikube service navbar-service`. This will bring up the helloworld UI that we have seen before. We added the `--record` to this because we want to record our rollout history that I'll talk about later on.
 
 Looking at the deployment, we see that there are 3 desired, current and ready replicas.
 
-As developers, we're required to make changes to our applications and get these deployed. The rollout functionality of Kubernetes assists with upgrades because it allows us to upgrade the code without any downtime. In our application, I'd like to update the text in the webpage to Adele style lyrics rather than Lionel Richie. I'll package this in a container with a new label called "adele".
+As developers, we're required to make changes to our applications and get these deployed. The rollout functionality of Kubernetes assists with upgrades because it allows us to upgrade the code without any downtime. In our application, I'd like to update the nav bar to a blue color rather than what it is right now. I'll package this in a container with a new label called "blue".
 
-To update the image, I run this command: `kubectl set image deployment/helloworld-lionel-deployment helloworld=karthequian/helloworld:adele`. This sets the image from what it is currently (karthequian/helloworld:lionel) to karthequian/helloworld:adele.
+To update the image, I run this command: `kubectl set image deployment/navbar-deployment helloworld=karthequian/helloworld:bluue`. This sets the image from what it is currently (karthequian/helloworld:black) to karthequian/helloworld:blue.
 
 The deployment will update, and if you look at the webpage, you'll see the updated text.
 
 Let's take a look at what happened here. When the deployment was edited, a new result set was created for it. Running the `kubectl get rs` command shows us this. One result set with 3 desired, current and ready pods, and another with 0.
 
-We can also take a look at the rollout history by typing `kubectl rollout history deployment/helloworld-lionel-deployment`.
+We can also take a look at the rollout history by typing `kubectl rollout history deployment/navbar-deployment`.
 
 ### Rollback the deployment to the 1st version
-To rollback the deployment, we use the rollout undo command `kubectl rollout undo deployment/helloworld-lionel-deployment`. This will revert our changes back to the previous version.
+To rollback the deployment, we use the rollout undo command `kubectl rollout undo deployment/navbar-deployment`. This will revert our changes back to the previous version.
 
 Our webpage will be back to the Lionel version of the deployment.
 

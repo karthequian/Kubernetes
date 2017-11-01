@@ -1,0 +1,20 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: logreader-dynamic
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        name: logreader-dynamic
+    spec:
+      containers:
+      - name: logreader
+        image: karthequian/reader:latest
+        env:
+        - name: log_level
+          valueFrom:
+            configMapKeyRef:
+              name: logger #Read from a configmap called log-level
+              key: log_level  #Read the key called log_level

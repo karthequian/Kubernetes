@@ -1,4 +1,4 @@
-# Running your first helloworld
+# Running the Kubernetes Dashboard
 
 ## Chapter Goals
 1. Run the Kubernetes Dashboard in minikube
