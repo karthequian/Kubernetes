@@ -114,9 +114,12 @@ Finally, sometimes your label might not have a value assigned to it, but you can
 
 As a bonus, labels will also work with `kubectl get services/deployments/all --show-labels` and will return labels for your services, deployments or all objects.
 
-`kubectl get all --show-labels`
+```
+```
 
 And, you can delete pods, services or deployments by label as well! For example `kubectl delete pods -l dev-lead=karthik` will delete all pods who's dev-lead was Karthik. 
 
+```
+```
 
 To summarize, labels in Kubernetes is a powerful concept! Use the labeling feature to your advantage to build your infrastructure in an organized fashion.

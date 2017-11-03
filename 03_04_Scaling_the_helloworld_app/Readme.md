@@ -5,7 +5,7 @@
 
 ### Learn how to scale the helloworld application
 
-When we run the `kubectl get all` command, we notice that there's a single instance of the helloworld deployment running, as well as a single pod associated with the deployment.
+When we run the `kubectl get deployments` command, we notice that there's a single instance of the helloworld deployment running, as well as a single pod associated with the deployment.
 
 There are many scenarios in which this is undesired. If for some reason the pod crashes or ends up in a crash loop, we will not have any instances of the application running, which will cause downtime until the pod can restart successfully.
 

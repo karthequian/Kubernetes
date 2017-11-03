@@ -1,0 +1,32 @@
+apiVersion: apps/v1beta2
+kind: DaemonSet
+metadata:
+  name: prod-daemonset
+  namespace: default
+  labels:
+    k8s-app: prod-daemonset
+spec:
+  selector:
+    matchLabels:
+      name: prod-daemonset
+  template:
+    metadata:
+      labels:
+        name: prod-daemonset
+    spec:
+      containers:
+      - name: prod-daemonset
+        image: busybox
+        args:
+        - /bin/sh
+        - -c
+        - date; sleep 1000
+        resources:
+          limits:
+            memory: 200Mi
+          requests:
+            cpu: 100m
+            memory: 200Mi
+      terminationGracePeriodSeconds: 30
+      nodeSelector: 
+        infra: "production"

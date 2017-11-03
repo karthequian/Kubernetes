@@ -11,27 +11,7 @@
 
 First, get minikube up and running with the command `minikube start`. This command sets up a Kubernetes dev environment for you via VirtualBox.
 
-Command output:
-```
-MacbookHome:~ karthik$ minikube start
-Starting local Kubernetes v1.7.5 cluster...
-Starting VM...
-Getting VM IP address...
-Moving files into cluster...
-Setting up certs...
-Connecting to cluster...
-Setting up kubeconfig...
-Starting cluster components...
-Kubectl is now configured to use the cluster.
-```
-
 The last statement in the output states that kubectl can talk to minikube. We can verify this by running the command `kubectl get nodes`
-
-```
-MacbookHome:~ karthik$ kubectl get nodes
-NAME       STATUS    AGE       VERSION
-minikube   Ready     7d        v1.7.5
-```
 
 This will show you that minikube is ready to use.
 
@@ -78,11 +58,14 @@ You'll notice that in the `kubectl get all` command, the service has a port mapp
 
 This is because by default, the pod is only accessible by its internal IP address within the cluster. To make the helloworld container accessible from outside the Kubernetes virtual network, you have to expose the pod as a Kubernetes service.
 
-To do this, we can expose the pod to the public internet using the kubectl expose command `kubectl expose deployment helloworld --type=LoadBalancer`
+To do this, we can expose the pod to the public internet using the kubectl expose command 
+`kubectl expose deployment hello-minikube --type=NodePort`
 
 The --type=LoadBalancer flag exposes the deployment outside of the cluster. On cloud providers that support load balancers, an external IP address would be provisioned to access the service.
 
-To do this in the minikube environment, the LoadBalancer type makes the service accessible through the minikube service command.
+kubectl expose deployment hello-minikube --type=NodePort
+
+To do this in the minikube environment, the nodeport or loadbalancer type makes the service accessible through the minikube service command.
 
 `minikube service helloworld`
 

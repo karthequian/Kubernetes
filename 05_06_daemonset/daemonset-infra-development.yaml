@@ -1,0 +1,32 @@
+apiVersion: apps/v1beta2
+kind: DaemonSet
+metadata:
+  name: example-daemonset2
+  namespace: default
+  labels:
+    k8s-app: example-daemonset2
+spec:
+  selector:
+    matchLabels:
+      name: example-daemonset2
+  template:
+    metadata:
+      labels:
+        name: example-daemonset2
+    spec:
+      containers:
+      - name: example-daemonset2
+        image: busybox
+        args:
+        - /bin/sh
+        - -c
+        - date; sleep 1000
+        resources:
+          limits:
+            memory: 200Mi
+          requests:
+            cpu: 100m
+            memory: 200Mi
+      terminationGracePeriodSeconds: 30
+      nodeSelector: 
+        infra: "development"
