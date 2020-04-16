@@ -6,16 +6,17 @@
 3. Create a deployment from the dashboard
 
 ### Run the Kubernetes Dashboard in minikube
-The Kubernetes Dashboard is a simple, web user interface for Kubernetes clusters. It allows users to manage applications running in the cluster and troubleshoot them, as well as manage the cluster itself.
+The Kubernetes Dashboard is a simple, web user interface for Kubernetes clusters. It allows users to manage and troubleshoot applications running in the cluster, as well as manage the cluster itself.
 
-One of the common asks in the container world is for the need for a ui to visualize what is going on with clusters. It was one of the most requested features of Docker when it first started, and companies like StackEngine, the one I worked at, or Rancher, were the way devops engineers would use to manage clusters.
+One of the common asks in the container world is for the need for a ui to visualize what is going on with clusters. It was one of the most requested features of Docker when it first started, and is a common requirement for devops engineers to manage clusters.
 
 Kubernetes learned from this lesson early on, and created the Kubernetes Dashboard for this purpose, and it allows you to monitor and view clusters from an operational perspective.
 
-We will also enable heapster, to see cluster memory and CPU usage. This is enabled on minikube with `minikube addons enable heapster`
+One thing I like about minikube are the addons, and the Kubernetes Dashboard comes bundled as an addon. You can view all addons by typing `minikube addons list`. Let's enable the dashboard by typing `minikube addons enable dashboard`.
 
-The dashboard comes pre enabled as an addon. To start up the dashboard type `minikube dashboard` in your command prompt.
+We will also enable the metrics server, to see cluster memory and CPU usage. This is enabled on minikube with `minikube addons enable metrics-server`
 
+To start up the dashboard, type `minikube dashboard`
 
 This will bring up the dashboard in your browser.
 

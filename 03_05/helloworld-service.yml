@@ -1,11 +1,10 @@
+# Helloworld service for nodeports
 apiVersion: v1
 kind: Service
 metadata:
   name: helloworld-service
 spec:
-  # if your cluster supports it, uncomment the following to automatically create
-  # an external load-balanced IP for the frontend service.
-  type: LoadBalancer
+  type: NodePort
   ports:
   - port: 80
     protocol: TCP
