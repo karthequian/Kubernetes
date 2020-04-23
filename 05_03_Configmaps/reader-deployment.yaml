@@ -1,13 +1,18 @@
-apiVersion: extensions/v1beta1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: logreader
+  labels:
+    app: logreader
 spec:
   replicas: 1
+  selector:
+    matchLabels:
+      app: logreader
   template:
     metadata:
       labels:
-        name: logreader
+        app: logreader
     spec:
       containers:
       - name: logreader

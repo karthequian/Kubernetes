@@ -11,7 +11,7 @@ Running a job is similar to running a deployment, and we can create this by `kub
 
 To see the output of the job: `kubectl get jobs`
 
-You can find the pod that ran by doing a `kubectl get pods --all-pods`, and then get the logs from it as well.
+You can find the pod that ran by doing a `kubectl get pods`, and then get the logs from it as well.
 
 ### How to run cron jobs
 Cron jobs are like jobs, but they run periodically.

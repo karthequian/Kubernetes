@@ -1,4 +1,4 @@
-# Getting Started with Minikube
+# Getting Started with Minikube on Mac
 
 ## Chapter Goals
 

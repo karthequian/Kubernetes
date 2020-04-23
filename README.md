@@ -1,7 +1,6 @@
-# Learning Kubernetes
+# The Learning Kubernetes Handout
 
-This folder includes all of the different pieces of information you'll need to take the Learning kubernetes course.
-
+This folder includes all of the different pieces of information you'll need to take the Learning Kubernetes course. It is referenced by the chapter number with chapter_lesson format. For example, 03_01 signifies chapter 3, video 01.
 
 # Chapter 01_02
 What is K8s: https://enterprisersproject.com/article/2017/10/how-explain-kubernetes-plain-english

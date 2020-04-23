@@ -10,7 +10,7 @@
 We will take our existing hellworld deployment, and add a readiness and liveness probe healthchecks.
 
 ```
-apiVersion: apps/v1beta1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: helloworld-deployment
@@ -71,7 +71,7 @@ livenessProbe:
 Thus, our deployment yaml now becomes:
 
 ```
-apiVersion: apps/v1beta1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: helloworld-deployment-with-probe
@@ -124,7 +124,7 @@ We run this yaml the same as we had done before: `kubectl create -f helloworld-d
 We will now try to simulate a bad helloworld pod that fails a readiness probe. Instead of checking port 80 like the last example, we will run a readiness check on port 90 to simulate a failing scenario. Thus, our yaml now is:
 
 ```
-apiVersion: apps/v1beta1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: helloworld-deployment-with-bad-readiness-probe
@@ -223,7 +223,7 @@ MacbookHome:04_02 Application health checks karthik$
 Next, we will simulate a bad helloworld pod that fails a liveness probe. Instead of checking port 80 like the last example, we will run a liveness check on port 90 to simulate a failing scenario. Thus, our yaml now is:
 
 ```
-apiVersion: apps/v1beta1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: helloworld-deployment-with-bad-liveness-probe

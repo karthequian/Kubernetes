@@ -1,6 +1,22 @@
 apiVersion: v1
 kind: Service
 metadata:
+  name: zk-hs
+  labels:
+    app: zk
+spec:
+  ports:
+  - port: 2888
+    name: server
+  - port: 3888
+    name: leader-election
+  clusterIP: None
+  selector:
+    app: zk
+---
+apiVersion: v1
+kind: Service
+metadata:
   name: zk-cs
   labels:
     app: zk
@@ -11,16 +27,29 @@ spec:
   selector:
     app: zk
 ---
-apiVersion: apps/v1beta1
+apiVersion: policy/v1beta1
+kind: PodDisruptionBudget
+metadata:
+  name: zk-pdb
+spec:
+  selector:
+    matchLabels:
+      app: zk
+  maxUnavailable: 1
+---
+apiVersion: apps/v1
 kind: StatefulSet
 metadata:
   name: zk
 spec:
+  selector:
+    matchLabels:
+      app: zk
   serviceName: zk-hs
-  replicas: 1
-  podManagementPolicy: Parallel
+  replicas: 3
   updateStrategy:
     type: RollingUpdate
+  podManagementPolicy: OrderedReady
   template:
     metadata:
       labels:
@@ -39,7 +68,7 @@ spec:
       containers:
       - name: kubernetes-zookeeper
         imagePullPolicy: Always
-        image: "gcr.io/google_containers/kubernetes-zookeeper:1.0-3.4.10"
+        image: "k8s.gcr.io/kubernetes-zookeeper:1.0-3.4.10"
         resources:
           requests:
             memory: "1Gi"
@@ -55,7 +84,7 @@ spec:
         - sh
         - -c
         - "start-zookeeper \
-          --servers=1 \
+          --servers=3 \
           --data_dir=/var/lib/zookeeper/data \
           --data_log_dir=/var/lib/zookeeper/data/log \
           --conf_dir=/opt/zookeeper/conf \
