@@ -1,6 +1,6 @@
 # The Learning Kubernetes Handout
 
-This folder includes all of the different pieces of information you'll need to take the [Learning Kubernetes]https://www.linkedin.com/learning/learning-kubernetes/ course on Linkedin Learning. 
+This folder includes all of the different pieces of information you'll need to take the [Learning Kubernetes](https://www.linkedin.com/learning/learning-kubernetes/) course on Linkedin Learning. 
 
 ## Exercise Files
 It is referenced by the chapter number with chapter_lesson format. For example, 03_01 signifies chapter 3, video 01.
