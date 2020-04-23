@@ -178,4 +178,4 @@ Kubeconf: http://events.linuxfoundation.org/events/kubecon
 
 DockerCon: http://europe-2017.dockercon.com/
 
-The Agile admin: [https://theagileadmin.com]
+The Agile admin: https://theagileadmin.com
