@@ -20,7 +20,7 @@ spec:
         livenessProbe:
           # length of time to wait for a pod to initialize
           # after pod startup, before applying health checking
-          initialDelaySeconds: 10
+          initialDelaySeconds: 5
           # How often (in seconds) to perform the probe.
           periodSeconds: 5
           # Amount of time to wait before timing out

@@ -1,4 +1,4 @@
-apiVersion: apps/v1beta2
+apiVersion: apps/v1
 kind: DaemonSet
 metadata:
   name: example-daemonset
@@ -14,6 +14,7 @@ spec:
       labels:
         name: example-daemonset
     spec:
+      #nodeSelector: minikube # Specify if you want to run on specific nodes
       containers:
       - name: example-daemonset
         image: busybox

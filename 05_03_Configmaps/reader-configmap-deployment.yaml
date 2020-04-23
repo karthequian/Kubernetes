@@ -1,13 +1,18 @@
-apiVersion: extensions/v1beta1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: logreader-dynamic
+  labels:
+    app: logreader-dynamic
 spec:
   replicas: 1
+  selector:
+    matchLabels:
+      app: logreader-dynamic
   template:
     metadata:
       labels:
-        name: logreader-dynamic
+        app: logreader-dynamic
     spec:
       containers:
       - name: logreader
