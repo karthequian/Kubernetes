@@ -3,35 +3,52 @@
 Here are the links for the different sections that were covered during the course.
 
 # Chapter 01_02
-What is K8s: [https://enterprisersproject.com/article/2017/10/how-explain-kubernetes-plain-english]
+[What is K8s] https://enterprisersproject.com/article/2017/10/how-explain-kubernetes-plain-english
+
 K8s pronounciation: https://twitter.com/gregde/status/487456224368410624
 
 
 # Chapter 01_02
 What is K8s: https://enterprisersproject.com/article/2017/10/how-explain-kubernetes-plain-english
+
 K8s pronounciation: https://twitter.com/gregde/status/487456224368410624
 
 
 # Chapter 01_03
 Joe Beda: https://www.crunchbase.com/person/joe-beda
+
 Addon list: https://kubernetes.io/docs/concepts/cluster-administration/addons/
+
 Service discovery: https://en.wikipedia.org/wiki/Service_discovery
+
 Persistent storage: https://blog.bigbinary.com/2017/04/12/using-kubernetes-persistent-volume-for-persistent-data-storage.html
+
 Features: https://www.openshift.com/container-platform/kubernetes.html
+
 K8s v/s openshift: https://www.openshift.com/container-platform/kubernetes.html
+
 K8s HA: https://kubernetes.io/docs/admin/high-availability/
 
 
 # Chapter 01_04
 Bitnami survey: http://blog.bitnami.com/2017/08/container-trends-part2.html
+
 Rancher: https://github.com/rancher/rancher#installation
+
 Kubernetes versus swarm: https://platform9.com/blog/kubernetes-docker-swarm-compared/
+
 Nomad: https://www.nomadproject.io/
+
 Docker versus mesos versus kubernetes: https://mesosphere.com/blog/docker-vs-kubernetes-vs-apache-mesos/
+
 Kubernetes: http://blog.wercker.com/best-things-about-kubernetes-now
+
 ARCHITECT: http://news.architecht.io/issues/with-oracle-on-board-kubernetes-has-to-be-the-de-facto-standard-for-container-orchestration-73880
+
 Docker support for k8s: https://www.docker.com/kubernetes
+
 Azure container service: https://azure.microsoft.com/en-us/blog/introducing-azure-container-service-aks-managed-kubernetes-and-azure-container-registry-geo-replication/?cdn=disable
+
 Azure Container service + Kubernetes: https://azure.microsoft.com/en-us/services/container-service/
 
 
