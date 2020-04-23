@@ -3,7 +3,7 @@
 Here are the links for the different sections that were covered during the course.
 
 # Chapter 01_02
-What is K8s: https://enterprisersproject.com/article/2017/10/how-explain-kubernetes-plain-english
+What is K8s: [https://enterprisersproject.com/article/2017/10/how-explain-kubernetes-plain-english]
 K8s pronounciation: https://twitter.com/gregde/status/487456224368410624
 
 
@@ -114,4 +114,4 @@ CNCF: https://www.cncf.io/
 CNCF Meetups: https://www.meetup.com/pro/cncf/
 Kubeconf: http://events.linuxfoundation.org/events/kubecon
 DockerCon: http://europe-2017.dockercon.com/
-The Agile admin: https://theagileadmin.com
+The Agile admin: [https://theagileadmin.com]
