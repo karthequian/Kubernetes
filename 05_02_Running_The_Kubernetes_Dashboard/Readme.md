@@ -34,5 +34,7 @@ Create a helloworld deployment with the UI; specify an app name, and container i
 #### Handout Links
 
 [Kubernetes Dashboard doc](https://kubernetes.io/docs/tasks/access-application-cluster/web-ui-dashboard/)
+
 [Dashboard - Full Featured Web Interface for Kubernetes](http://blog.kubernetes.io/2016/07/dashboard-web-interface-for-kubernetes.html)
+
 [Dashboard Github](https://github.com/kubernetes/dashboard)
