@@ -12,7 +12,7 @@ Looking at the deployment, we see that there are 3 desired, current and ready re
 
 As developers, we're required to make changes to our applications and get these deployed. The rollout functionality of Kubernetes assists with upgrades because it allows us to upgrade the code without any downtime. In our application, I'd like to update the nav bar to a blue color rather than what it is right now. I'll package this in a container with a new label called "blue".
 
-To update the image, I run this command: `kubectl set image deployment/navbar-deployment helloworld=karthequian/helloworld:blue`. This sets the image from what it is currently (karthequian/helloworld:black) to karthequian/helloworld:blue.
+To update the image, I run this command: `kubectl set image deployment/navbar-deployment helloworld=karthequian/helloworld:blue --record=true`. This sets the image from what it is currently (karthequian/helloworld:black) to karthequian/helloworld:blue.
 
 The deployment will update, and if you look at the webpage, you'll see the updated text.
 
