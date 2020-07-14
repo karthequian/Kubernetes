@@ -39,7 +39,7 @@ To remove an existing label, just add a `-` to the end of the label key as follo
 ### Searching by labels
 Creating, getting and deleting labels is nice, but the ability to search using labels helps us identify what's going on in our infrastructure better. Let's take a look. First, we're going to deploy a few pods that will constitute what a small org might have. 
 
-`kubectl create -f kubectl create -f sample-infrastructure-with-labels.yml`
+`kubectl create -f sample-infrastructure-with-labels.yml`
 
 ```
 ```
