@@ -2,11 +2,6 @@
 
 Here are the links for the different sections that were covered during the course.
 
-# Chapter 01_02
-[What is K8s] https://enterprisersproject.com/article/2017/10/how-explain-kubernetes-plain-english
-
-K8s pronounciation: https://twitter.com/gregde/status/487456224368410624
-
 
 # Chapter 01_02
 What is K8s: https://enterprisersproject.com/article/2017/10/how-explain-kubernetes-plain-english
