@@ -21,5 +21,5 @@ spec:
         - name: log_level
           valueFrom:
             configMapKeyRef:
-              name: logger #Read from a configmap called log-level
+              name: logger #Read from a configmap called logger
               key: log_level  #Read the key called log_level
